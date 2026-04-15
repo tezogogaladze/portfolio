@@ -8,9 +8,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Alex Morgan — Senior Frontend Engineer",
+  title: "Tezo Gogaladze — Full-stack Mobile and Web Developer",
   description:
-    "Alex Morgan is a senior frontend engineer who builds pixel-perfect, accessible, and performant interfaces for the web.",
+    "Full-stack mobile and web developer specializing in Flutter, Firebase, Supabase, and Node.js—building scalable apps, real-time systems, and operational tooling.",
 };
 
 export default function RootLayout({

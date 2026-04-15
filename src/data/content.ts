@@ -1,6 +1,5 @@
-// ─── PLACEHOLDER CONTENT ─────────────────────────────────────────────────────
-// Replace the values below with your own information.
-// The types are exported so you can reuse them across components.
+// ─── SITE CONTENT ───────────────────────────────────────────────────────────
+// Types are exported so you can reuse them across components.
 
 export type Experience = {
   dateRange: string;
@@ -49,10 +48,10 @@ export const navItems: NavItem[] = [
 // ─── SOCIAL LINKS ────────────────────────────────────────────────────────────
 
 export const socialLinks: SocialLink[] = [
-  { label: "GitHub", url: "https://github.com", icon: "github" },
-  { label: "LinkedIn", url: "https://linkedin.com", icon: "linkedin" },
-  { label: "Email", url: "mailto:hello@example.com", icon: "email" },
-  { label: "Instagram", url: "https://instagram.com", icon: "instagram" },
+  { label: "GitHub", url: "https://github.com/tezogogaladze", icon: "github" },
+  { label: "LinkedIn", url: "https://linkedin.com/in/tezogogaladze", icon: "linkedin" },
+  { label: "Email", url: "mailto:tezogogaladze@gmail.com", icon: "email" },
+  { label: "Instagram", url: "#", icon: "instagram" },
 ];
 
 // ─── ABOUT ───────────────────────────────────────────────────────────────────
@@ -68,46 +67,38 @@ export const aboutParagraphs: string[] = [
 
 export const experiences: Experience[] = [
   {
-    dateRange: "2022 — Present",
-    title: "Senior Frontend Engineer",
-    company: "Acme Corp",
-    companyUrl: "#",
+    dateRange: "Nov 2025 — Present",
+    title: "Founder & Solo Developer",
+    company: "Supra",
+    companyUrl: "https://www.supra-booking.com",
     description:
-      "Build and maintain critical components used to construct the frontend, across the whole product. Work closely with cross-functional teams including designers, product managers, and other developers to implement and advocate for best practices in web accessibility.",
+      "Founded and architected Supra, a full-stack restaurant reservation ecosystem: consumer mobile apps, restaurant tablet software, and operational dashboards. Built scalable booking flows (real-time reservations, availability, table assignments, approvals, scheduling) with Flutter for iOS and Android backed by Firebase and Firestore. Designed backend architecture across Firebase, Supabase, and Railway with authentication, API integrations, and role-based access for customers, staff, and admins. Structured data models and modular architecture for multi-restaurant expansion.",
     technologies: [
-      "React",
+      "Flutter",
+      "Firebase",
+      "Firestore",
+      "Supabase",
+      "Railway",
+      "Node.js",
+      "Dart",
       "TypeScript",
-      "Next.js",
-      "Tailwind CSS",
-      "GraphQL",
     ],
   },
   {
-    dateRange: "2020 — 2022",
-    title: "Frontend Engineer",
-    company: "Initech",
+    dateRange: "Jun 2017 — Nov 2025",
+    title: "IT & Software Systems Specialist",
+    company: "Independent / Contract",
     companyUrl: "#",
     description:
-      "Developed and styled interactive web apps for various clients, including an enterprise dashboard with real-time analytics. Collaborated with a team of engineers to develop new features and resolve complex technical challenges.",
-    technologies: ["React", "JavaScript", "SCSS", "Redux", "Jest"],
-  },
-  {
-    dateRange: "2018 — 2020",
-    title: "UI Developer",
-    company: "Globex Studios",
-    companyUrl: "#",
-    description:
-      "Developed, maintained, and shipped production code for client websites, primarily using HTML, CSS, Sass, JavaScript, and jQuery. Performed quality assurance testing and cross-browser/device compatibility checks.",
-    technologies: ["HTML", "CSS", "JavaScript", "jQuery", "WordPress"],
-  },
-  {
-    dateRange: "2016 — 2018",
-    title: "Web Developer Intern",
-    company: "Umbrella Lab",
-    companyUrl: "#",
-    description:
-      "Assisted in the development of internal tooling and contributed to the redesign of the public-facing marketing site. Gained foundational experience in modern web development workflows.",
-    technologies: ["HTML", "CSS", "JavaScript", "PHP", "Git"],
+      "Managed IT infrastructure including servers, networking, and backend environments supporting internal applications. Developed company websites and internal web applications with backend integrations and databases. Built automation tools and internal software to streamline operations and reduce manual work. Provided hands-on support across hardware, networking, and software.",
+    technologies: [
+      "JavaScript",
+      "Node.js",
+      "REST APIs",
+      "PostgreSQL",
+      "Networking",
+      "Automation",
+    ],
   },
 ];
 
@@ -115,31 +106,31 @@ export const experiences: Experience[] = [
 
 export const projects: Project[] = [
   {
-    title: "Halcyon Theme",
+    title: "Supra",
     description:
-      "A minimal, dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more. Available on the Visual Studio Marketplace with over 100k installs.",
-    url: "#",
-    technologies: ["VS Code", "Sublime Text", "Atom", "iTerm2"],
+      "Restaurant reservation platform: consumer mobile experience, restaurant-side tablet tooling, and operational dashboards. Emphasis on real-time bookings, availability and table management, approval workflows, and scheduling—built for growth across multiple venues.",
+    url: "https://www.supra-booking.com",
+    technologies: [
+      "Flutter",
+      "Firebase",
+      "Firestore",
+      "Supabase",
+      "Railway",
+      "Node.js",
+      "RBAC",
+    ],
   },
   {
-    title: "Spotify Profile",
+    title: "Corporate web & internal systems",
     description:
-      "A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track.",
+      "Company-facing websites and internal web apps with backend and database integrations, plus automation tooling to replace repetitive manual workflows—delivered alongside broader IT infrastructure and support responsibilities.",
     url: "#",
-    technologies: ["React", "Express", "Spotify API", "Heroku"],
-  },
-  {
-    title: "Build a Spotify Connected App",
-    description:
-      "A comprehensive video course that walks through building a full-stack web app with the Spotify API. Covers Node.js, React, Express, and deployment.",
-    url: "#",
-    technologies: ["React", "Node.js", "Express", "Spotify API"],
-  },
-  {
-    title: "Time Zone Converter",
-    description:
-      "A clean and intuitive web tool for quickly converting times across different time zones with a focus on usability and accessibility.",
-    url: "#",
-    technologies: ["Next.js", "TypeScript", "Vercel"],
+    technologies: [
+      "JavaScript",
+      "Node.js",
+      "REST APIs",
+      "PostgreSQL",
+      "Automation",
+    ],
   },
 ];
