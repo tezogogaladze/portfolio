@@ -37,7 +37,7 @@ export const personalInfo = {
   name: "Tezo Gogaladze",
   title: "Full-stack Mobile and Web developer",
   blurb:
-    "I build mobile and web applications.",
+    "I build structured, production-ready systems for mobile and web.",
 };
 
 // ─── NAVIGATION ──────────────────────────────────────────────────────────────
