@@ -109,6 +109,34 @@ export const experiences: Experience[] = [
 
 export const projects: Project[] = [
   {
+    title: "Supra",
+    description:
+      "Restaurant reservation platform: consumer mobile experience, restaurant-side tablet tooling, and operational dashboards. Emphasis on real-time bookings, availability and table management, approval workflows, and scheduling—built for growth across multiple venues.",
+    url: "https://www.supra-booking.com",
+    technologies: [
+      "Flutter",
+      "Firebase",
+      "Firestore",
+      "Supabase",
+      "Railway",
+      "Node.js",
+      "RBAC",
+    ],
+  },
+  {
+    title: "Corporate web & internal systems",
+    description:
+      "Company-facing websites and internal web apps with backend and database integrations, plus automation tooling to replace repetitive manual workflows—delivered alongside broader IT infrastructure and support responsibilities.",
+    url: "https://www.nobs.solutions",
+    technologies: [
+      "JavaScript",
+      "Node.js",
+      "REST APIs",
+      "PostgreSQL",
+      "Automation",
+    ],
+  },
+  {
     title: "The 5-Minute Rule",
     description:
       "Minimal app designed to reduce friction and trigger immediate action.",
