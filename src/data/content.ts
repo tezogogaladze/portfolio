@@ -13,7 +13,10 @@ export type Experience = {
 export type Project = {
   title: string;
   description: string;
+  /** Primary link (live app, store, or demo). */
   url: string;
+  /** Optional source repository. */
+  repoUrl?: string;
   technologies: string[];
 };
 
@@ -106,31 +109,27 @@ export const experiences: Experience[] = [
 
 export const projects: Project[] = [
   {
-    title: "Supra",
+    title: "The 5-Minute Rule",
     description:
-      "Restaurant reservation platform: consumer mobile experience, restaurant-side tablet tooling, and operational dashboards. Emphasis on real-time bookings, availability and table management, approval workflows, and scheduling—built for growth across multiple venues.",
-    url: "https://www.supra-booking.com",
-    technologies: [
-      "Flutter",
-      "Firebase",
-      "Firestore",
-      "Supabase",
-      "Railway",
-      "Node.js",
-      "RBAC",
-    ],
+      "Minimal app designed to reduce friction and trigger immediate action.",
+    url: "https://apps.apple.com/us/app/the-5-minute-rule/id6759627808",
+    repoUrl: "https://github.com/tezogogaladze/the-5-minute-rule",
+    technologies: ["Flutter", "Dart", "iOS", "Android"],
   },
   {
-    title: "Corporate web & internal systems",
+    title: "AR viewer",
     description:
-      "Company-facing websites and internal web apps with backend and database integrations, plus automation tooling to replace repetitive manual workflows—delivered alongside broader IT infrastructure and support responsibilities.",
-    url: "#",
-    technologies: [
-      "JavaScript",
-      "Node.js",
-      "REST APIs",
-      "PostgreSQL",
-      "Automation",
-    ],
+      "Web-based AR product viewer using WebXR with iOS USDZ fallback.",
+    url: "https://ar-viewer-rouge.vercel.app/",
+    repoUrl: "https://github.com/tezogogaladze/ar-viewer",
+    technologies: ["Three.js", "WebXR", "JavaScript", "GLTF", "USDZ"],
+  },
+  {
+    title: "Expo",
+    description:
+      "High-end showroom-style website concept for product and interior presentation.",
+    url: "https://expo-inky.vercel.app/",
+    repoUrl: "https://github.com/tezogogaladze/expo",
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
   },
 ];

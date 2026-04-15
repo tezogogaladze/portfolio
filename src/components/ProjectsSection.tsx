@@ -23,7 +23,7 @@ export default function ProjectsSection() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="group/link inline-flex items-baseline text-base font-medium leading-tight text-slate-200 hover:text-[color:var(--nav-hover-text)] focus-visible:text-[color:var(--nav-hover-text)]"
-                      aria-label={project.title}
+                      aria-label={`${project.title} (opens in a new tab)`}
                     >
                       <span className="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block" />
                       <span>
@@ -43,6 +43,19 @@ export default function ProjectsSection() {
                         </svg>
                       </span>
                     </a>
+                    {project.repoUrl ? (
+                      <span className="mt-1 block text-xs font-medium normal-case tracking-normal text-slate-500">
+                        <a
+                          href={project.repoUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="transition-colors hover:text-[color:var(--nav-hover-text)] focus-visible:text-[color:var(--nav-hover-text)]"
+                          aria-label={`${project.title} source on GitHub (opens in a new tab)`}
+                        >
+                          GitHub
+                        </a>
+                      </span>
+                    ) : null}
                   </h3>
                   <p className="mt-2 text-sm leading-normal text-slate-400">
                     {project.description}
