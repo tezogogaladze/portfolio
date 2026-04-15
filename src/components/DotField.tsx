@@ -63,33 +63,6 @@ const DotField = memo(({
     if (!ctx) return;
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     let resizeTimer: ReturnType<typeof setTimeout>;
-    const mobileMq = window.matchMedia('(max-width: 1023px)');
-    let staticMode = mobileMq.matches;
-
-    function isStaticMode() {
-      return mobileMq.matches;
-    }
-
-    function drawStaticFrame() {
-      const dots = dotsRef.current;
-      const { w, h } = sizeRef.current;
-      const p = propsRef.current;
-      const len = dots.length;
-      const rad = (p.dotRadius as number) / 2;
-
-      ctx!.clearRect(0, 0, w, h);
-      const grad = ctx!.createLinearGradient(0, 0, w, h);
-      grad.addColorStop(0, p.gradientFrom as string);
-      grad.addColorStop(1, p.gradientTo as string);
-      ctx!.fillStyle = grad;
-      ctx!.beginPath();
-      for (let i = 0; i < len; i++) {
-        const d = dots[i];
-        ctx!.moveTo(d.ax + rad, d.ay);
-        ctx!.arc(d.ax, d.ay, rad, 0, TWO_PI);
-      }
-      ctx!.fill();
-    }
 
     function resize() {
       clearTimeout(resizeTimer);
@@ -110,11 +83,6 @@ const DotField = memo(({
       sizeRef.current = { w, h };
 
       buildDots(w, h);
-
-      staticMode = isStaticMode();
-      if (staticMode) {
-        drawStaticFrame();
-      }
     }
 
     function buildDots(w: number, h: number) {
@@ -156,7 +124,7 @@ const DotField = memo(({
       m.prevY = m.y;
     }
 
-    let speedInterval: ReturnType<typeof setInterval> | null = null;
+    const speedInterval = setInterval(updateMouseSpeed, 20);
 
     let frameCount = 0;
 
@@ -249,62 +217,22 @@ const DotField = memo(({
       rafRef.current = requestAnimationFrame(tick);
     }
 
-    function stopAnimation() {
-      if (rafRef.current !== null) {
-        cancelAnimationFrame(rafRef.current);
-        rafRef.current = null;
-      }
-      if (speedInterval !== null) {
-        clearInterval(speedInterval);
-        speedInterval = null;
-      }
-      window.removeEventListener('mousemove', onMouseMove);
-    }
-
-    function startAnimation() {
-      if (rafRef.current !== null) return;
-      speedInterval = setInterval(updateMouseSpeed, 20);
-      window.addEventListener('mousemove', onMouseMove, { passive: true });
-      rafRef.current = requestAnimationFrame(tick);
-    }
-
-    function applyLayoutMode() {
-      staticMode = isStaticMode();
-      if (staticMode) {
-        stopAnimation();
-        drawStaticFrame();
-      } else {
-        startAnimation();
-      }
-    }
-
-    function onBreakpointChange() {
-      doResize();
-      applyLayoutMode();
-    }
-
     doResize();
     window.addEventListener('resize', resize);
-    mobileMq.addEventListener('change', onBreakpointChange);
-    if (!staticMode) {
-      startAnimation();
-    }
+    window.addEventListener('mousemove', onMouseMove, { passive: true });
+    rafRef.current = requestAnimationFrame(tick);
 
     rebuildRef.current = () => {
       const { w, h } = sizeRef.current;
-      if (w > 0 && h > 0) {
-        buildDots(w, h);
-        if (isStaticMode()) {
-          drawStaticFrame();
-        }
-      }
+      if (w > 0 && h > 0) buildDots(w, h);
     };
 
     return () => {
-      stopAnimation();
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      clearInterval(speedInterval);
       clearTimeout(resizeTimer);
       window.removeEventListener('resize', resize);
-      mobileMq.removeEventListener('change', onBreakpointChange);
+      window.removeEventListener('mousemove', onMouseMove);
     };
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

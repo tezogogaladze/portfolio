@@ -1,6 +1,13 @@
 "use client";
 
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+  type ReactNode,
+} from "react";
 
 type SectionHeadingProps = {
   children: ReactNode;
@@ -9,40 +16,56 @@ type SectionHeadingProps = {
 export default function SectionHeading({ children }: SectionHeadingProps) {
   const sentinelRef = useRef<HTMLDivElement>(null);
   const [stuck, setStuck] = useState(false);
+  const rafRef = useRef<number | null>(null);
+
+  const updateStuck = useCallback(() => {
+    const el = sentinelRef.current;
+    if (!el || window.matchMedia("(min-width: 1024px)").matches) {
+      setStuck(false);
+      return;
+    }
+    const r = el.getBoundingClientRect();
+    // Sentinel fully above the viewport → sticky heading is pinned under `top: 0`.
+    setStuck(r.bottom <= 0);
+  }, []);
+
+  const scheduleUpdate = useCallback(() => {
+    if (rafRef.current !== null) return;
+    rafRef.current = requestAnimationFrame(() => {
+      rafRef.current = null;
+      updateStuck();
+    });
+  }, [updateStuck]);
+
+  useLayoutEffect(() => {
+    updateStuck();
+  }, [updateStuck]);
 
   useEffect(() => {
-    const el = sentinelRef.current;
-    if (!el) return;
-
     const desktopMq = window.matchMedia("(min-width: 1024px)");
-    let io: IntersectionObserver | null = null;
+    const onDesktopChange = () => updateStuck();
 
-    const sync = () => {
-      io?.disconnect();
-      io = null;
+    desktopMq.addEventListener("change", onDesktopChange);
+    window.addEventListener("scroll", scheduleUpdate, { passive: true, capture: true });
+    window.addEventListener("resize", scheduleUpdate);
+    const vv = window.visualViewport;
+    vv?.addEventListener("resize", scheduleUpdate);
+    vv?.addEventListener("scroll", scheduleUpdate);
 
-      if (desktopMq.matches) {
-        setStuck(false);
-        return;
-      }
+    scheduleUpdate();
 
-      io = new IntersectionObserver(
-        ([entry]) => {
-          const { isIntersecting, boundingClientRect } = entry;
-          setStuck(!isIntersecting && boundingClientRect.top < 0);
-        },
-        { root: null, threshold: 0 },
-      );
-      io.observe(el);
-    };
-
-    sync();
-    desktopMq.addEventListener("change", sync);
     return () => {
-      desktopMq.removeEventListener("change", sync);
-      io?.disconnect();
+      desktopMq.removeEventListener("change", onDesktopChange);
+      window.removeEventListener("scroll", scheduleUpdate, true);
+      window.removeEventListener("resize", scheduleUpdate);
+      vv?.removeEventListener("resize", scheduleUpdate);
+      vv?.removeEventListener("scroll", scheduleUpdate);
+      if (rafRef.current !== null) {
+        cancelAnimationFrame(rafRef.current);
+        rafRef.current = null;
+      }
     };
-  }, []);
+  }, [scheduleUpdate, updateStuck]);
 
   return (
     <>
@@ -52,7 +75,7 @@ export default function SectionHeading({ children }: SectionHeadingProps) {
         aria-hidden
       />
       <h2
-        className={`sticky top-0 z-20 -mx-6 mb-4 px-6 py-5 text-sm font-bold uppercase tracking-widest text-slate-200 transition-[background-color,backdrop-filter] duration-200 lg:sr-only ${
+        className={`sticky top-0 z-20 -mx-6 mb-4 px-6 py-5 text-sm font-bold uppercase tracking-widest text-slate-200 [transform:translateZ(0)] transition-[background-color,backdrop-filter] duration-200 lg:sr-only ${
           stuck ? "bg-[#0a0118]/75 backdrop-blur" : "bg-transparent"
         }`}
       >

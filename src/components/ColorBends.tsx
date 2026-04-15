@@ -207,6 +207,8 @@ export default function ColorBends({
       antialias: false,
       powerPreference: "high-performance",
       alpha: false,
+      // Avoid compositor tearing / blank frames when the mobile browser UI resizes the viewport.
+      preserveDrawingBuffer: true,
     });
     rendererRef.current = renderer;
     renderer.outputColorSpace = THREE.SRGBColorSpace;
@@ -220,16 +222,46 @@ export default function ColorBends({
 
     startTimeRef.current = performance.now();
 
+    let lastW = 0;
+    let lastH = 0;
+    let resizeDebounce: ReturnType<typeof setTimeout> | null = null;
+
+    const applySize = (w: number, h: number) => {
+      const cw = Math.max(1, Math.round(w));
+      const ch = Math.max(1, Math.round(h));
+      if (
+        lastW > 0 &&
+        lastH > 0 &&
+        Math.abs(cw - lastW) < 2 &&
+        Math.abs(ch - lastH) < 2
+      ) {
+        return;
+      }
+      lastW = cw;
+      lastH = ch;
+      renderer.setSize(cw, ch, false);
+      (material.uniforms.uCanvas.value as THREE.Vector2).set(cw, ch);
+    };
+
     const handleResize = () => {
       const w = container.clientWidth || 1;
       const h = container.clientHeight || 1;
-      renderer.setSize(w, h, false);
-      (material.uniforms.uCanvas.value as THREE.Vector2).set(w, h);
+      applySize(w, h);
+    };
+
+    const scheduleResize = () => {
+      if (resizeDebounce !== null) clearTimeout(resizeDebounce);
+      resizeDebounce = setTimeout(() => {
+        resizeDebounce = null;
+        handleResize();
+      }, 150);
     };
 
     handleResize();
 
-    const ro = new ResizeObserver(handleResize);
+    const ro = new ResizeObserver(() => {
+      scheduleResize();
+    });
     ro.observe(container);
     resizeObserverRef.current = ro;
 
@@ -252,6 +284,7 @@ export default function ColorBends({
     rafRef.current = requestAnimationFrame(loop);
 
     return () => {
+      if (resizeDebounce !== null) clearTimeout(resizeDebounce);
       if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
       resizeObserverRef.current?.disconnect();
       geometry.dispose();
