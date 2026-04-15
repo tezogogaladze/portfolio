@@ -127,7 +127,7 @@ export const projects: Project[] = [
     title: "Corporate web & internal systems",
     description:
       "Company-facing websites and internal web apps with backend and database integrations, plus automation tooling to replace repetitive manual workflows—delivered alongside broader IT infrastructure and support responsibilities.",
-    url: "https://www.nobs.solutions",
+    url: "#",
     technologies: [
       "JavaScript",
       "Node.js",
