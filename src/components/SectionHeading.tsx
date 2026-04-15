@@ -76,7 +76,7 @@ export default function SectionHeading({ children }: SectionHeadingProps) {
       />
       <h2
         className={`sticky top-0 z-20 -mx-6 mb-4 px-6 py-5 text-sm font-bold uppercase tracking-widest text-slate-200 [transform:translateZ(0)] transition-[background-color,backdrop-filter] duration-200 lg:sr-only ${
-          stuck ? "bg-[#0a0118]/75 backdrop-blur" : "bg-transparent"
+          stuck ? "bg-[#110f16]/75 backdrop-blur" : "bg-transparent"
         }`}
       >
         {children}
