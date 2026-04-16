@@ -54,7 +54,7 @@ export const socialLinks: SocialLink[] = [
   { label: "GitHub", url: "https://github.com/tezogogaladze", icon: "github" },
   { label: "LinkedIn", url: "https://linkedin.com/in/tezogogaladze", icon: "linkedin" },
   { label: "Email", url: "mailto:tezogogaladze@gmail.com", icon: "email" },
-  { label: "Instagram", url: "https://instagram.com/tezogogaladze", icon: "instagram" },
+  { label: "Instagram", url: "#", icon: "instagram" },
 ];
 
 // ─── ABOUT ───────────────────────────────────────────────────────────────────
