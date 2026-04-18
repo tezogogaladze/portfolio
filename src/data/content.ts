@@ -45,7 +45,7 @@ export const personalInfo = {
 export const navItems: NavItem[] = [
   { label: "About", href: "#about" },
   { label: "Experience", href: "#experience" },
-  { label: "Projects", href: "#projects" },
+  { label: "Featured projects", href: "#projects" },
 ];
 
 // ─── SOCIAL LINKS ────────────────────────────────────────────────────────────
@@ -127,19 +127,6 @@ export const projects: Project[] = [
     ],
   },
   {
-    title: "AI automation",
-    description:
-      "Internal and freelance automation work: booking flows for small businesses, WhatsApp and Instagram automations, and lightweight CRM setups—aligned with operational needs and day-to-day workflows.",
-    url: "#",
-    technologies: [
-      "JavaScript",
-      "Node.js",
-      "Automation",
-      "REST APIs",
-      "Integrations",
-    ],
-  },
-  {
     title: "The 5-Minute Rule",
     description:
       "Minimal app designed to reduce friction and trigger immediate action.",
@@ -162,5 +149,18 @@ export const projects: Project[] = [
     url: "https://expo-inky.vercel.app/",
     repoUrl: "https://github.com/tezogogaladze/expo",
     technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+  },
+  {
+    title: "AI automation",
+    description:
+      "Internal and freelance automation work: booking flows for small businesses, WhatsApp and Instagram automations, and lightweight CRM setups—aligned with operational needs and day-to-day workflows.",
+    url: "#",
+    technologies: [
+      "JavaScript",
+      "Node.js",
+      "Automation",
+      "REST APIs",
+      "Integrations",
+    ],
   },
 ];
