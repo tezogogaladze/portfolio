@@ -45,7 +45,7 @@ export const personalInfo = {
 export const navItems: NavItem[] = [
   { label: "About", href: "#about" },
   { label: "Experience", href: "#experience" },
-  { label: "Featured projects", href: "#projects" },
+  { label: "Projects", href: "#projects" },
 ];
 
 // ─── SOCIAL LINKS ────────────────────────────────────────────────────────────
