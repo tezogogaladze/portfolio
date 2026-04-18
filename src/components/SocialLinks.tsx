@@ -1,6 +1,6 @@
 import { socialLinks, type SocialLink } from "@/data/content";
 
-const ICON = "h-[30px] w-[30px] shrink-0";
+const ICON = "h-9 w-9 shrink-0";
 
 const icons: Record<SocialLink["icon"], React.ReactNode> = {
   github: (
