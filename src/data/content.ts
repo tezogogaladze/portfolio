@@ -23,7 +23,7 @@ export type Project = {
 export type SocialLink = {
   label: string;
   url: string;
-  icon: "github" | "linkedin" | "email" | "instagram";
+  icon: "github" | "linkedin" | "email";
 };
 
 export type NavItem = {
