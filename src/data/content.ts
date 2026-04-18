@@ -69,38 +69,42 @@ export const aboutParagraphs: string[] = [
 
 export const experiences: Experience[] = [
   {
-    dateRange: "Nov 2025 — Present",
-    title: "Founder & Solo Developer",
-    company: "Supra",
-    companyUrl: "https://www.supra-booking.com",
+    dateRange: "2024 — 2026",
+    title: "Frontend Engineer (React / TypeScript)",
+    company: "Scalefocus",
+    companyUrl: "https://www.scalefocus.com",
     description:
-      "Founded and architected Supra, a full-stack restaurant reservation ecosystem: consumer mobile apps, restaurant tablet software, and operational dashboards. Built scalable booking flows (real-time reservations, availability, table assignments, approvals, scheduling) with Flutter for iOS and Android backed by Firebase and Firestore. Designed backend architecture across Firebase, Supabase, and Railway with authentication, API integrations, and role-based access for customers, staff, and admins. Structured data models and modular architecture for multi-restaurant expansion.",
+      "Worked on outsourced projects for small-to-mid European products. Built React and TypeScript interfaces for operational workflows with reusable MUI-based components, integrated REST APIs, and handled form-heavy logic with a focus on usability, stability, and performance. Improved efficiency of internal tools used daily by non-technical users and delivered features end-to-end with minimal supervision.",
     technologies: [
-      "Flutter",
-      "Firebase",
-      "Firestore",
-      "Supabase",
-      "Railway",
-      "Node.js",
-      "Dart",
+      "React",
       "TypeScript",
+      "MUI",
+      "REST APIs",
+      "JavaScript",
     ],
   },
   {
-    dateRange: "Jun 2017 — Nov 2025",
-    title: "IT & Software Systems Specialist",
-    company: "Independent / Contract",
+    dateRange: "2021 — 2024",
+    title: "Junior Developer (React / JavaScript)",
+    company: "Exadel",
+    companyUrl: "https://www.exadel.com",
+    description:
+      "Contributed to internal tools and client features on the Eastern Europe remote team. Built UI with React, integrated REST APIs, handled data rendering, and fixed bugs while improving existing frontend logic. Worked through structured development workflows with Git, pull requests, and code reviews and shipped initial production features.",
+    technologies: [
+      "React",
+      "JavaScript",
+      "REST APIs",
+      "Git",
+    ],
+  },
+  {
+    dateRange: "2017 — 2021",
+    title: "IT Specialist",
+    company: "Private company",
     companyUrl: "#",
     description:
-      "Managed IT infrastructure including servers, networking, and backend environments supporting internal applications. Developed company websites and internal web applications with backend integrations and databases. Built automation tools and internal software to streamline operations and reduce manual work. Provided hands-on support across hardware, networking, and software.",
-    technologies: [
-      "JavaScript",
-      "Node.js",
-      "REST APIs",
-      "PostgreSQL",
-      "Networking",
-      "Automation",
-    ],
+      "Hands-on generalist role covering infrastructure, support, and early development in Tbilisi. Managed internal systems, devices, and networks; built small websites and tools; and resolved technical issues across departments.",
+    technologies: ["Networking", "JavaScript", "Web", "IT"],
   },
 ];
 
@@ -123,16 +127,16 @@ export const projects: Project[] = [
     ],
   },
   {
-    title: "Corporate web & internal systems",
+    title: "AI automation",
     description:
-      "Company-facing websites and internal web apps with backend and database integrations, plus automation tooling to replace repetitive manual workflows—delivered alongside broader IT infrastructure and support responsibilities.",
+      "Internal and freelance automation work: booking flows for small businesses, WhatsApp and Instagram automations, and lightweight CRM setups—aligned with operational needs and day-to-day workflows.",
     url: "#",
     technologies: [
       "JavaScript",
       "Node.js",
-      "REST APIs",
-      "PostgreSQL",
       "Automation",
+      "REST APIs",
+      "Integrations",
     ],
   },
   {
