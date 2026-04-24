@@ -35,9 +35,9 @@ export type NavItem = {
 
 export const personalInfo = {
   name: "Tezo Gogaladze",
-  title: "Full-stack Mobile and Web developer",
+  title: "UI-focused Product Engineer",
   blurb:
-    "I build structured, production-ready systems for mobile and web.",
+    "I design and build clean mobile and web products from idea to launch.",
 };
 
 // ─── NAVIGATION ──────────────────────────────────────────────────────────────
@@ -59,10 +59,11 @@ export const socialLinks: SocialLink[] = [
 // ─── ABOUT ───────────────────────────────────────────────────────────────────
 
 export const aboutParagraphs: string[] = [
-  "I’m a full-stack developer focused on building scalable mobile and web applications using Flutter and React. I enjoy working across the stack, from crafting smooth user experiences on the frontend to designing reliable, well-structured systems on the backend.",
-  "My work is centered around building applications that are not just functional, but maintainable and built to scale. I’ve spent a lot of time working with REST APIs, authentication flows, and real-time systems, often using Firebase and Node.js to power the backend. I pay close attention to architecture and data modeling, making sure the systems I build remain clean and easy to evolve over time.",
-  "I’m comfortable moving between frontend and backend, and I enjoy bridging the gap between the two — making sure everything integrates seamlessly and performs reliably in real-world use.",
-  "Technically, I work mainly with Dart, JavaScript, and TypeScript, and have experience building for both Android and iOS. I’ve worked with tools and systems like Firebase (Auth, Firestore, Cloud Functions), PostgreSQL, and OAuth-based authentication, and I follow structured approaches like role-based access control and scalable data design."
+  "I love building things that solve real problems.",
+  "I care deeply about my craft. The aesthetic of the interface, the smoothness of the experience, the small product decisions, the system behind the interface, and the moment when a rough idea finally becomes alive.",
+  "I focus on apps, dashboards, and business systems that need more than just good-looking screens. My work combines frontend development, backend integration, and product thinking: clear flows, structured data, reliable APIs, and interfaces that are easy to use in real conditions.",
+  "I work mainly with React, TypeScript, Flutter, and Firebase, building cross-platform apps, admin panels, booking systems, and operational tools. I care about how a product feels, how it behaves, and how easy it is to maintain after launch.",
+  "My strength is bridging the gap between design and engineering. I can take a rough idea, define the structure, map the user flow, design the interface, connect the backend, and ship a usable MVP.",
 ];
 
 // ─── EXPERIENCE ──────────────────────────────────────────────────────────────
