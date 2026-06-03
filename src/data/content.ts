@@ -109,6 +109,13 @@ export const experiences: Experience[] = [
 
 export const projects: Project[] = [
   {
+    title: "LookUpTonight",
+    description:
+      "A night-sky decision engine that fuses atmospheric data, cloud coverage models, lunar phase calculations, and light pollution mapping into a single computed visibility index, optimizing real-time stargazing decisions through a unified scoring system.",
+    url: "https://apps.apple.com/us/app/lookuptonight/id6774391639",
+    technologies: ["Flutter", "Dart", "iOS", "OpenWeather"],
+  },
+  {
     title: "Supra",
     description:
       "Restaurant reservation platform: consumer mobile experience, restaurant-side tablet tooling, and operational dashboards. Emphasis on real-time bookings, availability and table management, approval workflows, and scheduling—built for growth across multiple venues.",
@@ -151,13 +158,5 @@ export const projects: Project[] = [
     url: "https://ar-viewer-rouge.vercel.app/",
     repoUrl: "https://github.com/tezogogaladze/ar-viewer",
     technologies: ["Three.js", "WebXR", "JavaScript", "GLTF", "USDZ"],
-  },
-  {
-    title: "Expo",
-    description:
-      "High-end showroom-style website concept for product and interior presentation.",
-    url: "https://expo-inky.vercel.app/",
-    repoUrl: "https://github.com/tezogogaladze/expo",
-    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
   },
 ];
