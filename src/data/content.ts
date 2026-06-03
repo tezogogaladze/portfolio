@@ -23,7 +23,7 @@ export type Project = {
 export type SocialLink = {
   label: string;
   url: string;
-  icon: "github" | "linkedin" | "email" | "instagram";
+  icon: "github" | "linkedin" | "email";
 };
 
 export type NavItem = {
@@ -35,9 +35,9 @@ export type NavItem = {
 
 export const personalInfo = {
   name: "Tezo Gogaladze",
-  title: "Full-stack Mobile and Web developer",
+  title: "UI-focused Product Engineer",
   blurb:
-    "I build structured, production-ready systems for mobile and web.",
+    "I design and build clean mobile and web products from idea to launch.",
 };
 
 // ─── NAVIGATION ──────────────────────────────────────────────────────────────
@@ -54,54 +54,58 @@ export const socialLinks: SocialLink[] = [
   { label: "GitHub", url: "https://github.com/tezogogaladze", icon: "github" },
   { label: "LinkedIn", url: "https://linkedin.com/in/tezogogaladze", icon: "linkedin" },
   { label: "Email", url: "mailto:tezogogaladze@gmail.com", icon: "email" },
-  { label: "Instagram", url: "#", icon: "instagram" },
 ];
 
 // ─── ABOUT ───────────────────────────────────────────────────────────────────
 
 export const aboutParagraphs: string[] = [
-  "I’m a full-stack developer focused on building scalable mobile and web applications using Flutter and React. I enjoy working across the stack, from crafting smooth user experiences on the frontend to designing reliable, well-structured systems on the backend.",
-  "My work is centered around building applications that are not just functional, but maintainable and built to scale. I’ve spent a lot of time working with REST APIs, authentication flows, and real-time systems, often using Firebase and Node.js to power the backend. I pay close attention to architecture and data modeling, making sure the systems I build remain clean and easy to evolve over time.",
-  "I’m comfortable moving between frontend and backend, and I enjoy bridging the gap between the two — making sure everything integrates seamlessly and performs reliably in real-world use.",
-  "Technically, I work mainly with Dart, JavaScript, and TypeScript, and have experience building for both Android and iOS. I’ve worked with tools and systems like Firebase (Auth, Firestore, Cloud Functions), PostgreSQL, and OAuth-based authentication, and I follow structured approaches like role-based access control and scalable data design."
+  "I love building things that solve real problems.",
+  "I care deeply about my craft. The aesthetic of the interface, the smoothness of the experience, the small product decisions, the system behind the interface, and the moment when a rough idea finally becomes alive.",
+  "I focus on apps, dashboards, and business systems that need more than just good-looking screens. My work combines frontend development, backend integration, and product thinking: clear flows, structured data, reliable APIs, and interfaces that are easy to use in real conditions.",
+  "I work mainly with React, TypeScript, Flutter, and Firebase, building cross-platform apps, admin panels, booking systems, and operational tools. I care about how a product feels, how it behaves, and how easy it is to maintain after launch.",
+  "My strength is bridging the gap between design and engineering. I can take a rough idea, define the structure, map the user flow, design the interface, connect the backend, and ship a usable MVP.",
 ];
 
 // ─── EXPERIENCE ──────────────────────────────────────────────────────────────
 
 export const experiences: Experience[] = [
   {
-    dateRange: "Nov 2025 — Present",
-    title: "Founder & Solo Developer",
-    company: "Supra",
-    companyUrl: "https://www.supra-booking.com",
+    dateRange: "2024 — 2026",
+    title: "Frontend Engineer (React / TypeScript)",
+    company: "Scalefocus",
+    companyUrl: "https://www.scalefocus.com",
     description:
-      "Founded and architected Supra, a full-stack restaurant reservation ecosystem: consumer mobile apps, restaurant tablet software, and operational dashboards. Built scalable booking flows (real-time reservations, availability, table assignments, approvals, scheduling) with Flutter for iOS and Android backed by Firebase and Firestore. Designed backend architecture across Firebase, Supabase, and Railway with authentication, API integrations, and role-based access for customers, staff, and admins. Structured data models and modular architecture for multi-restaurant expansion.",
+      "Worked on outsourced projects for small-to-mid European products. Built React and TypeScript interfaces for operational workflows with reusable MUI-based components, integrated REST APIs, and handled form-heavy logic with a focus on usability, stability, and performance. Improved efficiency of internal tools used daily by non-technical users and delivered features end-to-end with minimal supervision.",
     technologies: [
-      "Flutter",
-      "Firebase",
-      "Firestore",
-      "Supabase",
-      "Railway",
-      "Node.js",
-      "Dart",
+      "React",
       "TypeScript",
+      "MUI",
+      "REST APIs",
+      "JavaScript",
     ],
   },
   {
-    dateRange: "Jun 2017 — Nov 2025",
-    title: "IT & Software Systems Specialist",
-    company: "Independent / Contract",
+    dateRange: "2021 — 2024",
+    title: "Junior Developer (React / JavaScript)",
+    company: "Exadel",
+    companyUrl: "https://www.exadel.com",
+    description:
+      "Contributed to internal tools and client features on the Eastern Europe remote team. Built UI with React, integrated REST APIs, handled data rendering, and fixed bugs while improving existing frontend logic. Worked through structured development workflows with Git, pull requests, and code reviews and shipped initial production features.",
+    technologies: [
+      "React",
+      "JavaScript",
+      "REST APIs",
+      "Git",
+    ],
+  },
+  {
+    dateRange: "2017 — 2021",
+    title: "IT Specialist",
+    company: "Private company",
     companyUrl: "#",
     description:
-      "Managed IT infrastructure including servers, networking, and backend environments supporting internal applications. Developed company websites and internal web applications with backend integrations and databases. Built automation tools and internal software to streamline operations and reduce manual work. Provided hands-on support across hardware, networking, and software.",
-    technologies: [
-      "JavaScript",
-      "Node.js",
-      "REST APIs",
-      "PostgreSQL",
-      "Networking",
-      "Automation",
-    ],
+      "Hands-on generalist role covering infrastructure, support, and early development in Tbilisi. Managed internal systems, devices, and networks; built small websites and tools; and resolved technical issues across departments.",
+    technologies: ["Networking", "JavaScript", "Web", "IT"],
   },
 ];
 
@@ -131,19 +135,6 @@ export const projects: Project[] = [
     ],
   },
   {
-    title: "Corporate web & internal systems",
-    description:
-      "Company-facing websites and internal web apps with backend and database integrations, plus automation tooling to replace repetitive manual workflows—delivered alongside broader IT infrastructure and support responsibilities.",
-    url: "#",
-    technologies: [
-      "JavaScript",
-      "Node.js",
-      "REST APIs",
-      "PostgreSQL",
-      "Automation",
-    ],
-  },
-  {
     title: "The 5-Minute Rule",
     description:
       "Minimal app designed to reduce friction and trigger immediate action.",
@@ -158,5 +149,18 @@ export const projects: Project[] = [
     url: "https://ar-viewer-rouge.vercel.app/",
     repoUrl: "https://github.com/tezogogaladze/ar-viewer",
     technologies: ["Three.js", "WebXR", "JavaScript", "GLTF", "USDZ"],
+  },
+  {
+    title: "AI automation",
+    description:
+      "Internal and freelance automation work: booking flows for small businesses, WhatsApp and Instagram automations, and lightweight CRM setups—aligned with operational needs and day-to-day workflows.",
+    url: "#",
+    technologies: [
+      "JavaScript",
+      "Node.js",
+      "Automation",
+      "REST APIs",
+      "Integrations",
+    ],
   },
 ];
