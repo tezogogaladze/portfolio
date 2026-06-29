@@ -116,7 +116,7 @@ export const projects: Project[] = [
     title: "NKVTS.NET editor portfolio",
     description:
       "A single-page portfolio for a video editor built with React, TypeScript, and GSAP (ScrollTrigger + ScrollSmoother). The hero is a photoreal CRT room where six TVs play reels on hover and scroll drives a pinned zoom through the center screen into the content below. Desktop gets the full interactive experience; mobile uses a lighter path with the same content, including horizontal process scroll, featured project embeds, and section navigation without sacrificing performance.",
-    url: "#",
+    url: "https://www.nkvts.net/",
     technologies: [
       "React",
       "TypeScript",
