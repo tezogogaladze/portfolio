@@ -113,6 +113,20 @@ export const experiences: Experience[] = [
 
 export const projects: Project[] = [
   {
+    title: "NKVTS.NET editor portfolio",
+    description:
+      "A single-page portfolio for a video editor built with React, TypeScript, and GSAP (ScrollTrigger + ScrollSmoother). The hero is a photoreal CRT room where six TVs play reels on hover and scroll drives a pinned zoom through the center screen into the content below. Desktop gets the full interactive experience; mobile uses a lighter path with the same content, including horizontal process scroll, featured project embeds, and section navigation without sacrificing performance.",
+    url: "#",
+    technologies: [
+      "React",
+      "TypeScript",
+      "GSAP",
+      "ScrollTrigger",
+      "ScrollSmoother",
+      "Responsive",
+    ],
+  },
+  {
     title: "LookUpTonight",
     description:
       "A night-sky decision engine that fuses atmospheric data, cloud coverage models, lunar phase calculations, and light pollution mapping into a single computed visibility index, optimizing real-time stargazing decisions through a unified scoring system.",
@@ -151,16 +165,11 @@ export const projects: Project[] = [
     technologies: ["Three.js", "WebXR", "JavaScript", "GLTF", "USDZ"],
   },
   {
-    title: "AI automation",
+    title: "Expo",
     description:
-      "Internal and freelance automation work: booking flows for small businesses, WhatsApp and Instagram automations, and lightweight CRM setups—aligned with operational needs and day-to-day workflows.",
-    url: "#",
-    technologies: [
-      "JavaScript",
-      "Node.js",
-      "Automation",
-      "REST APIs",
-      "Integrations",
-    ],
+      "High-end showroom-style website concept for product and interior presentation.",
+    url: "https://expo-inky.vercel.app/",
+    repoUrl: "https://github.com/tezogogaladze/expo",
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
   },
 ];
